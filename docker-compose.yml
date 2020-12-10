@@ -29,9 +29,10 @@ services:
       - ./backend:/work/backend
 
   db:
-    build:
-      context: .
-      dockerfile: ./infra/docker/mysql/Dockerfile
+    image: mariadb:latest
+    # build:
+    #   context: .
+    #   dockerfile: ./infra/docker/mysql/Dockerfile
     ports:
       - ${DB_PORT:-3306}:3306
     volumes:
